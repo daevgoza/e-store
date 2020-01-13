@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 
 class AppComponent extends Component {
     render() {
-        return <h1>Hola</h1>;
+        return (
+            <div id='example-div'>
+                <h1>Dashy</h1>
+                <p>¡Ya sirve!</p>
+            </div>
+        );
     }
 }
 

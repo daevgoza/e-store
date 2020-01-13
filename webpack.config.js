@@ -1,5 +1,7 @@
 const path = require('path');
 
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
 
 module.exports = () => ({
     watchOptions: {
@@ -9,7 +11,7 @@ module.exports = () => ({
     devServer: {
         contentBase: './dist',
         historyApiFallback: true,
-        host: '0.0.0.0',
+        host: 'localhost',
     },
     mode: 'development',
     devtool: 'inline-source-map',
@@ -35,4 +37,10 @@ module.exports = () => ({
         path: path.resolve(__dirname, 'dist'),
         publicPath: '',
     },
+    plugins: [
+        new HtmlWebPackPlugin({
+            filename: 'index.html',
+            template: './src/index.html',
+        }),
+    ],
 });
